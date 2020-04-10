@@ -228,3 +228,5 @@ addEventListener('#send-message', 'submit', async (e) => {
 })
 
 client.service('messages').on('created', addMessage)
+
+client.service('users').on('created', addUser)
