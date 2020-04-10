@@ -5,8 +5,15 @@
   "paginate": {
     "default": 10,
     "max": 50
-  },
+  }, 
   "authentication": {
+    "oauth": {
+      "redirect": "/",
+      "github": {
+        "key": "7aad29d96b9df335b5c9",
+        "secret": "dd81da38dc5222470475ca4f4518d31c588fa95e"
+      }
+    }, 
     "entity": "user",
     "service": "users",
     "secret": "+hSzhji8YjjIEeJFZt4+wEzgixs=",
