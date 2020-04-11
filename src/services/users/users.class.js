@@ -10,17 +10,18 @@ exports.Users = class Users extends Service {
   
 
     create(data, params) {
-        const { email, password, githubId } = data
+        const { email, password, githubId, avatar } = data
+        // console.log(data)
         
         const hash = crypto.createHash('md5').update(email.toLowerCase()).digest('hex');
 
-        const avatar = `${gravatarUrl}/${hash}/${query}`;
+        const gravatar = `${gravatarUrl}/${hash}/${query}`;
 
         const userData = {
             email,
             password,
             githubId,
-            avatar
+            avatar: avatar === '' || null || undefined ? gravatar : avatar
         }
 
 

@@ -10,8 +10,8 @@
     "oauth": {
       "redirect": "/",
       "github": {
-        "key": "7aad29d96b9df335b5c9",
-        "secret": "dd81da38dc5222470475ca4f4518d31c588fa95e"
+        "key": "2fc8806c8d7b336b1061",
+        "secret": "0820c27456cfbf4f4daa25c8f768b3b97ede626f"
       }
     }, 
     "entity": "user",

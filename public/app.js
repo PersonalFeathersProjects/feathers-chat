@@ -23,7 +23,8 @@ const login = async (credentials) => {
         showChat();
     }
     catch(error){
-       showLogin(error) 
+        showLogin(error)
+        console.log(error)
     }
 }
 

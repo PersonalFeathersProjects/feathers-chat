@@ -5,21 +5,23 @@ const { expressOauth, OAuthStrategy } = require('@feathersjs/authentication-oaut
 class GitHubStrategy extends OAuthStrategy {
   async getEntityData(profile) {
     const baseData = await super.getEntityData(profile);
+    // console.log(profile)
 
     return {
       ...baseData,
-      email: profile.email
+      email: profile.email,
+      avatar: profile.avatar_url
     };
   }
 }
 
 module.exports = app => {
-  const authService = new AuthenticationService(app);
+  const authentication = new AuthenticationService(app);
 
-  authService.register('jwt', new JWTStrategy());
-  authService.register('local', new LocalStrategy());
-  authService.register('github', new GitHubStrategy());
+  authentication.register('jwt', new JWTStrategy());
+  authentication.register('local', new LocalStrategy());
+  authentication.register('github', new GitHubStrategy());
 
-  app.use('/authentication', authService);
+  app.use('/authentication', authentication);
   app.configure(expressOauth());
 };
